@@ -20,15 +20,25 @@ module.exports = {
         es2021: true,
         node: true,
     },
-    extends: 'standard-with-typescript',
+    extends: [
+        'standard-with-typescript',
+        'eslint:recommended',
+        'plugin:@typescript-eslint/recommended',
+        'plugin:react/recommended',
+        'plugin:react-hooks/recommended'
+    ],
     overrides: [],
+    parser: '@typescript-eslint/parser',
     parserOptions: {
+        ecmaFeatures: {
+            jsx: true
+        },
         ecmaVersion: 'latest',
         sourceType: 'module',
         tsconfigRootDir: __dirname,
         project: './tsconfig-eslint.json',
     },
-    plugins: ['import'],
+    plugins: ['import', '@typescript-eslint', 'react', 'react-hooks'],
     rules: Object.assign(common, {
         curly: 'error',
         'no-console': 'warn',
@@ -36,6 +46,7 @@ module.exports = {
         'no-case-declarations': 'off',
         'object-shorthand': [2, 'consistent'],
         'import/no-unassigned-import': 'warn',
+        "react/react-in-jsx-scope": "off",
         '@typescript-eslint/no-namespace': 'off',
         '@typescript-eslint/member-delimiter-style': ['error', {}],
         '@typescript-eslint/space-before-function-paren': 'off',
@@ -55,4 +66,9 @@ module.exports = {
             },
         ],
     }),
+    settings: {
+    react: {
+      version: 'detect'
+    }
+  }
 };

@@ -1,0 +1,31 @@
+{
+    "expo": {
+      "name": "clean-architecture-with-react-native",
+      "slug": "clean-architecture-with-react-native",
+      "version": "1.0.0",
+      "orientation": "portrait",
+      "icon": "./src/ui/assets/images/icon.png",
+      "scheme": "myapp",
+      "userInterfaceStyle": "automatic",
+      "splash": {
+        "image": "./src/ui/assets/images/splash.png",
+        "resizeMode": "contain",
+        "backgroundColor": "#ffffff"
+      },
+      "ios": {
+        "supportsTablet": true
+      },
+      "android": {
+        "adaptiveIcon": {
+          "foregroundImage": "./src/ui/assets/images/adaptive-icon.png",
+          "backgroundColor": "#ffffff"
+        }
+      },
+      "web": {
+        "bundler": "metro",
+        "output": "static",
+        "favicon": "./src/ui/assets/images/favicon.png"
+      }
+    }
+  }
+  
