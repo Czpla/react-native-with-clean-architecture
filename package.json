@@ -10,7 +10,10 @@
     "web": "expo start --web",
     "lint": "eslint .",
     "lint:fix": "npm run lint -- --fix",
-    "test": "jest --config jest.config.ts"
+    "test": "jest --config jest.config.ts",
+    "test:watch": "npm test -- --watch",
+    "test:staged": "npm test -- --findRelatedTests",
+    "test:ci": "npm test -- --coverage"
   },
   "keywords": [],
   "author": "",
