@@ -59,6 +59,7 @@ module.exports = {
         '@typescript-eslint/restrict-template-expressions': 'off',
         '@typescript-eslint/method-signature-style': ['error', 'method'],
         '@typescript-eslint/consistent-type-definitions': 'off',
+        "@typescript-eslint/no-explicit-any": 'off',
         '@typescript-eslint/prefer-nullish-coalescing': [
             'error',
             {
