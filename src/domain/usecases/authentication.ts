@@ -1,7 +1,7 @@
-import { type AccountModel } from '@/domain/models/account-model';
+import { type Account } from '@/domain/entities/account-entitie';
 
 export interface Authentication {
-    auth(params: Authentication.Params): Promise<AccountModel>;
+    auth(params: Authentication.Params): Promise<Account>;
 }
 
 export namespace Authentication {
