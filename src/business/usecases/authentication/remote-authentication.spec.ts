@@ -40,7 +40,7 @@ describe('RemoteAuthentication', () => {
         expect(httpPostClient.body).toEqual(params);
     });
 
-    test('Should thow InvalidCredentialsError if HttpPostClient returns 401', async () => {
+    test('Should throw InvalidCredentialsError if HttpPostClient returns 401', async () => {
         const { sut, httpPostClient } = makeSut();
 
         httpPostClient.response = {
@@ -52,7 +52,7 @@ describe('RemoteAuthentication', () => {
         await expect(promise).rejects.toThrow(new InvalidCredentialsError());
     });
 
-    test('Should thow UnexpectedError if HttpPostClient returns 400', async () => {
+    test('Should throw UnexpectedError if HttpPostClient returns 400', async () => {
         const { sut, httpPostClient } = makeSut();
 
         httpPostClient.response = {
@@ -64,7 +64,7 @@ describe('RemoteAuthentication', () => {
         await expect(promise).rejects.toThrow(new UnexpectedError());
     });
 
-    test('Should thow UnexpectedError if HttpPostClient returns 404', async () => {
+    test('Should throw UnexpectedError if HttpPostClient returns 404', async () => {
         const { sut, httpPostClient } = makeSut();
 
         httpPostClient.response = {
@@ -76,7 +76,7 @@ describe('RemoteAuthentication', () => {
         await expect(promise).rejects.toThrow(new UnexpectedError());
     });
 
-    test('Should thow UnexpectedError if HttpPostClient returns 500', async () => {
+    test('Should throw UnexpectedError if HttpPostClient returns 500', async () => {
         const { sut, httpPostClient } = makeSut();
 
         httpPostClient.response = {
