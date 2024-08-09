@@ -60,6 +60,7 @@ module.exports = {
         '@typescript-eslint/method-signature-style': ['error', 'method'],
         '@typescript-eslint/consistent-type-definitions': 'off',
         "@typescript-eslint/no-explicit-any": 'off',
+        "@typescript-eslint/no-unsafe-argument": "off",
         '@typescript-eslint/prefer-nullish-coalescing': [
             'error',
             {
