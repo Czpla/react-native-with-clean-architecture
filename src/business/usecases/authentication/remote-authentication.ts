@@ -5,20 +5,20 @@ import { type HttpPostClient } from '@/business/protocols/http/http-post-client'
 import { type Authentication } from '@/domain/usecases/authentication';
 import { type Account } from '@/domain/entities/account-entitie';
 
-export class RemoteAuthentication {
+export class RemoteAuthentication implements Authentication {
     constructor(
         private readonly url: string,
         private readonly httpPostClient: HttpPostClient<Authentication.Params, Account>,
     ) {}
 
-    async auth(params: Authentication.Params): Promise<void> {
-        const response = await this.httpPostClient.post({
+    public async auth(params: Authentication.Params): Promise<Account> {
+        const httpResponse = await this.httpPostClient.post({
             url: this.url,
             body: params,
         });
 
-        switch (response.statusCode) {
-            case HttpStatusCode.ok: break;
+        switch (httpResponse.statusCode) {
+            case HttpStatusCode.ok: return httpResponse.body;
             case HttpStatusCode.unauthorized: throw new InvalidCredentialsError();
             default: throw new UnexpectedError();
         }
