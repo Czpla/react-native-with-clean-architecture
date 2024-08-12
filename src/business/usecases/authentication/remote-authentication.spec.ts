@@ -2,7 +2,7 @@ import { HttpStatusCode } from '@/business/protocols/http/http-response';
 import { RemoteAuthentication } from './remote-authentication';
 import { HttpPostClientSpy } from '@/business/test/mock-http-client';
 import { InvalidCredentialsError } from '@/domain/errors/invalid-credentials-error';
-import { mockAuthentication } from '@/domain/test/mock-authentication';
+import { mockAccount, mockAuthentication } from '@/domain/test/mock-account';
 import { UnexpectedError } from '@/domain/errors/unexpected-error';
 import { type Authentication } from '@/domain/usecases/authentication';
 import { type Account } from '@/domain/entities/account-entitie';
@@ -88,5 +88,19 @@ describe('RemoteAuthentication', () => {
         const promise = sut.auth(mockAuthentication());
 
         await expect(promise).rejects.toThrow(new UnexpectedError());
+    });
+
+    test('Should return an Account if HttpPostClient returns 200', async () => {
+        const { sut, httpPostClient } = makeSut();
+        const httpResult = mockAccount();
+
+        httpPostClient.response = {
+            statusCode: HttpStatusCode.ok,
+            body: httpResult,
+        };
+
+        const account = await sut.auth(mockAuthentication());
+
+        expect(account).toEqual(httpResult);
     });
 });
