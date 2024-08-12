@@ -1,4 +1,4 @@
-import { type Account } from '@/domain/entities/account-entitie';
+import { type Account } from '@/domain/entities';
 
 export interface Authentication {
     auth(params: Authentication.Params): Promise<Account>;
