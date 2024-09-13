@@ -6,7 +6,7 @@ export interface HttpPostClient<T, R> {
 
 export namespace HttpPostClient {
     export interface Params<T> {
-        url?: string;
+        url: string;
         body?: T;
     }
 }
