@@ -2,7 +2,7 @@
   "name": "clean-architecture-with-react-native",
   "version": "1.0.0",
   "description": "",
-  "main": "src/ui/App",
+  "main": "src/main/main",
   "scripts": {
     "start": "expo start",
     "android": "expo start --android",

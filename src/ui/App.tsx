@@ -1,4 +1,3 @@
-import { registerRootComponent } from 'expo';
 import { View, Text, StyleSheet } from 'react-native';
 
 export default function App() {
@@ -17,5 +16,3 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
     },
 });
-
-registerRootComponent(App);
