@@ -23,7 +23,7 @@
     "@types/axios": "^0.14.0",
     "@types/jest": "^29.5.12",
     "@types/node": "^20.14.11",
-    "@types/react": "~18.2.45",
+    "@types/react": "~18.3.12",
     "@typescript-eslint/eslint-plugin": "^6.4.0",
     "@typescript-eslint/parser": "^6.0.0",
     "eslint": "^8.57.0",
@@ -43,10 +43,10 @@
   },
   "dependencies": {
     "axios": "^1.7.7",
-    "expo": "^51.0.21",
-    "expo-router": "^3.5.18",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "react-native": "0.74.3"
+    "expo": "^52.0.18",
+    "expo-router": "^4.0.11",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-native": "^0.76.5"
   }
 }
