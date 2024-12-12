@@ -63,7 +63,7 @@ module.exports = {
         "@typescript-eslint/no-unsafe-argument": "off",
         "@typescript-eslint/unbound-method": "off",
         '@typescript-eslint/prefer-nullish-coalescing': [
-            'error',
+            'off',
             {
                 ignoreConditionalTests: true,
                 ignoreMixedLogicalExpressions: true,
